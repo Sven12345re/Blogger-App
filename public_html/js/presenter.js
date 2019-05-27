@@ -18,11 +18,12 @@ const presenter = (function () {
         // Nutzer abfragen und Anzeigenamen als owner setzen
         model.getSelf((result) => {
             owner = result.displayName;
+            console.log(`Presenter: Nutzer ${owner} hat sich angemeldet.`);
         });
-        console.log(`Presenter: Nutzer ${owner} hat sich angemeldet.`);
+        
 
         // Hier kommt Ihr Code hin   
-
+        
         // Das muss an geeigneter Stelle in Ihren Code hinein.
         init = true;
         // ruft über den Router die Methode showBlogOverview() auf
