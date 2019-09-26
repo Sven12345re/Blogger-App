@@ -13,6 +13,14 @@ const model = (function () {
 
     // Oeffentliche Methoden
     return {
+        // Setter für loggedIn
+        setLoggedIn(b) {
+            loggedIn = b;
+        },
+        // Getter für loggedIn
+        isLoggedIn() {
+            return loggedIn;
+        },
         // Liefert den angemeldeten Nutzer mit allen Infos
         getSelf(callback) {
             var request = gapi.client.request({

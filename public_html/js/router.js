@@ -1,4 +1,4 @@
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -14,6 +14,7 @@ const router = (function () {
         // Fügt eine neue Route (URL, auszuführende Funktion) zu der Map hinzu
         addRoute: function (route, handler) {
             mapRouteToHandler.set(route, handler);
+
         },
 
         // Wird aufgerufen, wenn zu einer anderen Adresse navigiert werden soll
@@ -31,9 +32,10 @@ const router = (function () {
 
         // Wird als EventHandler aufgerufen, sobald die Pfeiltasten des Browsers betätigt werden
         handleRouting: function () {
-            console.log("Router: Navigation zu: " + window.location.pathname);
             const currentPage = window.location.pathname.split('/')[1];
+            console.log("Router: Navigation zu: " + window.location.pathname);
             let routeHandler = mapRouteToHandler.get(currentPage);
+
             if (routeHandler === undefined)
                 routeHandler = mapRouteToHandler.get(''); //Startseite
             routeHandler(window.location.pathname);
@@ -60,6 +62,27 @@ const router = (function () {
         var blogId = url.split('blogOverview/')[1].trim();
         //viewModel.blogId = id;
         presenter.showBlogOverview(blogId);
+
+    });
+
+    router.addRoute('blogDetail', function (url) {
+        console.log("Router: Aufruf von blogDetail");
+        console.log("URL: " + window.location.pathname);
+        let id = url.split('blogDetail/')[1].trim();
+
+        let postId = id.split("/")[1];
+        let blogId = id.split("/")[0];
+
+        presenter.showBlogDetail(blogId, postId);
+    });
+    router.addRoute('blogEdit', function (url) {
+        console.log("Router: Aufruf von blogEdit");
+        console.log("URL: " + window.location.pathname);
+        let id = url.split('blogEdit/')[1].trim();
+        let postId = id.split("/")[1];
+        let blogId = id.split("/")[0];
+
+        presenter.showBlogEdit(blogId, postId);
     });
 
     //Methoden an den router binden
@@ -76,5 +99,3 @@ const router = (function () {
         router.handleRouting();
     }
 })();
-
-

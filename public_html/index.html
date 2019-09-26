@@ -5,23 +5,124 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
-        <title>Blogger</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script async defer src="https://apis.google.com/js/api.js"></script>
-        <script src="js\login.js" defer ></script>
-        <script src="js\model.js" defer ></script>
-        <script src="js\presenter.js" defer ></script>
-        <script src="js\router.js" defer ></script>
-    </head>
-    <body>
-        <header>
+
+<head>
+    <title>Blogger</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script async defer src="https://apis.google.com/js/api.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    <script defer src="js/model.js"></script>
+    <script defer src="js/presenter.js"></script>
+    <script defer src="js/router.js"></script>
+    <script defer src="js/login.js"></script>
+    <script defer src="js/view.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/elements.css">
+</head>
+<body>
+<main>
+    <header>
+
         <h1>BLOGGER</h1>
-            <button id="sign-in-or-out-button">Anmelden</button>
-            <div id="auth-status"></div><hr>
-        </header>
-        <main>TODO write content</main>
-    </body>
+        <button id="sign-in-or-out-button">Anmelden</button>
+        <div class="Blue-Grey-Shade-1-rgba" id="auth-status"></div>
+
+
+        <p class="user-name"></p>
+
+        <ul></ul>
+
+
+        <article class="blogs" id="head">
+
+        </article>
+
+        <div id="main-content">
+
+
+        </div>
+
+    </header>
+    <div id="templates" hidden>
+        <div id="overview">
+
+            <h2>Blog Übersicht</h2>
+            <h3> %name </h3>
+            <button class="blogansicht">Blogansicht</button>
+            <button class="addPost">Hinzufügen</button>
+
+            <br>
+            <time>Veröffentlicht: %published</time>
+            <br>
+            <time>Verändert: %updated</time>
+            <br>
+            <br>
+
+            <div id="allBlogPosts" class="container">
+
+            </div>
+        </div>
+
+        <div id="blogPost">
+
+            <div id="allPost">
+                <p class="post-title"> %title </p>
+                <button class="editansicht" data-action="/blogEdit">Bearbeiten</button>
+                <button class="detailansicht" data-action="/blogDetail">Ansicht</button>
+                <button class="loeschen" data-action="/blogOverview">Löschen</button>
+                <p class="date">Veröffentlicht: %published</p>
+                <p class="date">Verändert: %updated</p>
+                <p>Anzahl der Kommentare: %numberOfComments</p>
+            </div>
+
+        </div>
+
+
+        <div id="blogDetail">
+
+            <h2> Detailansicht</h2>
+            <button class="editansichtDetail" data-action="/blogEdit">Bearbeiten</button>
+            <button class="delete" href="/blogOverview/%blogId">Post Löschen</button>
+            <h2>%name</h2>
+
+            <h3> %title</h3>
+            <hr>
+            <p class="blogContent"> %content</p>
+
+            <hr>
+            <p class="date">Veröffentlicht: %published</p>
+            <p class="date">Verändert: %updated</p>
+            <aside>
+                <h4>Kommentare</h4>
+            </aside>
+
+            <a class="backToOverview" href="/blogOverview/%blogId">Zurück zur Übersicht</a>
+
+        </div>
+        <article id="commentary">
+            <div class="commentHead">
+                <section>%name ,%published</section>
+            </div>
+            <section>%content</section>
+            <button class="deleteComment" data-action="/blogOverview">Kommentar Löschen</button>
+
+            <br>
+        </article>
+        <div id="blogEdit">
+            <h2> Editieren</h2>
+            <h2>%name</h2>
+            <input id="title" type="text" name="Titel" value=%title>
+            <button class="save"> Speichern</button>
+            <hr>
+            <textarea id="content" cols="50" rows="10"> %content</textarea>
+            <hr>
+            <p id="publishedPost">Veröffentlicht: %published</p>
+            <p id="updatedPost">Verändert: %updated</p>
+            <a class="backToOverview" href="/blogOverview/%blogId">zurück zur Übersicht</a>
+        </div>
+    </div>
+
+</main>
+</body>
 </html>

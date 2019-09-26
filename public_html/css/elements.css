@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
+
+/* Color Theme Swatches in Hex */
+.blue1 {
+    color: #74A5CC;
+}
+
+.greyBlue {
+    color: #B1C0CC;
+}
+
+.blue2 {
+    color: #4F7695;
+}
+
+.greyBlue2 {
+    color: #6F7880;
+}
+
+.darkGrey {
+    color: #42484D;
+}
+
+.menu-space{
+    padding-bottom: 4%;
+    padding-top: 4%
+}
+
+.user-name{
+    padding-bottom: 2%;
+}
+
+
+main {
+    padding: 1.5% 3% 3% 3%;
+    line-height: 150%;
+
+}
+
+header {
+    font-family: 'Quicksand', sans-serif;
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(177, 192, 204, 0.45);
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #4F7695
+}
+
+
+p {
+    margin: 0% 0% 0% 0%;
+}
+
+h2 {
+    padding-top: 4%;
+    color: #4F7695;
+}
+
+h1 {
+    font-family: 'Quicksand', sans-serif;
+
+}
+
+h3 {
+    font-family: 'Quicksand', sans-serif;
+}
+
+h4 {
+    padding: 0px;
+}
+
+.post-title {
+    font-weight: bolder;
+    font-size: large;
+}
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+
+}
+
+.container > div {
+    width: 25%;
+    margin: 4px;
+    text-align: left;
+    line-height: 150%;
+    font-size: 15px;
+    font-family: 'Quicksand', sans-serif;
+    border-style: solid;
+    padding: 2%;
+    border-width: 1px;
+    border-color: #B1C0CC;
+
+
+}
+
+.post-title{
+    font-weight: bold;
+    padding-bottom: 15px;
+}
+
+
+button {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 15px;
+    display: inline-block;
+    padding: 3px 3px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #000000;
+    background-color: rgba(177, 192, 204, 0.45);
+    border: none;
+    border-radius: 1px;
+}
+
+
+
+button:hover {background-color: rgba(79, 118, 149, 0.88)
+}
+
+button:active {
+    background-color: #4f7695;
+    box-shadow: 0 2px rgba(255, 255, 255, 0.1);
+    transform: translateY(1px);
+}
+
+.backToOverview {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 15px;
+    display: inline-block;
+    padding: 3px 3px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #000000;
+    background-color: rgba(177, 192, 204, 0.45);
+    border: none;
+    border-radius: 1px;
+}
+
+.backToOverview:hover {background-color: rgba(79, 118, 149, 0.88)
+}
+
+textarea{
+    font-family: 'Quicksand', sans-serif;
+    font-size: medium;
+    text-align: left;
+}
+
+input{
+    font-family: 'Quicksand', sans-serif;
+    font-size: medium;
+}
+
+.commentHead{
+    font-style: oblique;
+}
+
+#commentary {
+    border-style: solid;
+    padding: 1%;
+    border-width: 1px;
+    border-color: #B1C0CC;
+}
+
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+}
+
